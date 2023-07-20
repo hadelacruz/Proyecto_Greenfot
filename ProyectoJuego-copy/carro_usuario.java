@@ -15,15 +15,19 @@ public class carro_usuario extends Actor
     public void act()
     {
         if (Greenfoot.isKeyDown("right")){
-            setLocation(getX() +1, getY());
+            if(getX() < 450)
+                setLocation(getX() +1, getY());
         }
         if (Greenfoot.isKeyDown("left")){
-            setLocation(getX() -1, getY());
+            if(getX() > 50)
+                setLocation(getX() -1, getY());
         }
         if (Greenfoot.isKeyDown("up")){
-            setLocation(getX() , getY () -1);
+            if(getY() > 270)
+                setLocation(getX() , getY () -1);
         }
         if (Greenfoot.isKeyDown("down")){
+            if(getY() < 520)
             setLocation(getX() , getY () +1);
         }
     }
