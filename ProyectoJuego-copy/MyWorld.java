@@ -34,14 +34,14 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(550, 706, 1); 
         prepare();
-        carro = new Carro_usuario(3);
+        carro = new Carro_usuario(4);
         //Lugar donde colocamos al carro_usuario
         addObject(carro, 275, 515);
         
         //Inicializar variables
         cantidad_adelantamientos = 0;
         cantidad_adelantamientos_nivel = 4;
-        velocidad_enemigo = 3;
+        velocidad_enemigo = 5;
         //cantidad_rivales = 0;
         
         score = new Counter("Soccer: ");
