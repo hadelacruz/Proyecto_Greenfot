@@ -6,11 +6,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class carro_usuario extends Actor
+public class Carro_usuario extends Actor
 {
     private int speed;
-    public carro_usuario (int v){
-        speed = v;
+    public Carro_usuario (int velocidad){
+        speed = velocidad;
+        GreenfootImage carro_usuario = getImage();
+        carro_usuario.scale(98, 300);
     }
     /**
      * Act - do whatever the carro_usuario wants to do. This method is called whenever
@@ -19,20 +21,37 @@ public class carro_usuario extends Actor
     public void act()
     {
         if (Greenfoot.isKeyDown("right")){
-            if(getX() < 450)
+            if(getX() < 410)
                 setLocation(getX() +speed, getY());
         }
         if (Greenfoot.isKeyDown("left")){
-            if(getX() > 50)
+            if(getX() > 135)
                 setLocation(getX() -speed, getY());
         }
         if (Greenfoot.isKeyDown("up")){
-            if(getY() > 270)
+            if(getY() > 400)
                 setLocation(getX() , getY () - speed);
         }
         if (Greenfoot.isKeyDown("down")){
-            if(getY() < 520)
+            if(getY() < 615)
                 setLocation(getX() , getY () +speed);
         }
+        //Se elimina el rival y el usuario si chocan
+        Actor rival;
+        rival=  getOneObjectAtOffset(0,0, Carro_rival.class);
+        if(rival !=null){
+            World Myworld;
+            Myworld = getWorld();
+            Myworld.removeObject(rival);
+            Myworld.removeObject(this);
+            
+            Greenfoot.setWorld(new MyWorld());
+            Greenfoot.stop();
+        }
     }
+    
+    public void aumenta_velocidad(){
+        speed++;
+    }
+    
 }
