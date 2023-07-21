@@ -47,8 +47,9 @@ public class Carro_usuario extends Actor
             Myworld.removeObject(this);
             mundo.stop_audio();
             Greenfoot.playSound("../sounds/choque2.mp3");
-            Greenfoot.setWorld(new MyWorld());
-            Greenfoot.stop();
+            Greenfoot.setWorld(new Menu());
+            //Greenfoot.setWorld(new MyWorld());
+            //Greenfoot.stop();
         }
     }
     
