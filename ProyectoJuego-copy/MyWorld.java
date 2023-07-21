@@ -17,7 +17,7 @@ public class MyWorld extends World
     private int cantidad_adelantamientos;
     private int cantidad_adelantamientos_nivel;
     private int cantidad_rivales;
-    private Carro_usuario carro;
+    private Usuario carro;
     
     
     //Sonido mundo
@@ -34,7 +34,7 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(550, 706, 1); 
         prepare();
-        carro = new Carro_usuario(4);
+        carro = new Usuario(4);
         //Lugar donde colocamos al carro_usuario
         addObject(carro, 275, 515);
         
@@ -98,26 +98,26 @@ public class MyWorld extends World
             
             //Primer auto
             if(carril==0){
-                addObject(new Carro_rival(velocidad_enemigo),155, 85);
+                addObject(new Rival(velocidad_enemigo),155, 85);
             }
             if(carril==1){
-                addObject(new Carro_rival(velocidad_enemigo),275, 85);
+                addObject(new Rival(velocidad_enemigo),275, 85);
             }
             if(carril==2){
-                addObject(new Carro_rival(velocidad_enemigo),395, 85);
+                addObject(new Rival(velocidad_enemigo),395, 85);
             }
             carril ++;
             carril = carril % 3;
             
             //Segundo auto
             if(carril==0){
-                addObject(new Carro_rival(velocidad_enemigo),155, 85);
+                addObject(new Rival(velocidad_enemigo),155, 85);
             }
             if(carril==1){
-                addObject(new Carro_rival(velocidad_enemigo),275, 85);
+                addObject(new Rival(velocidad_enemigo),275, 85);
             }
             if(carril==2){
-                addObject(new Carro_rival(velocidad_enemigo),395, 85);
+                addObject(new Rival(velocidad_enemigo),395, 85);
             }
             
             cantidad_rivales = 2;

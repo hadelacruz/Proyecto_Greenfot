@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Carro_rival extends Actor
+public class Rival extends Actor
 {
     private int speed;
     
@@ -14,7 +14,7 @@ public class Carro_rival extends Actor
      * Act - do whatever the carro_rival wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public Carro_rival(int velocidad){
+    public Rival(int velocidad){
         speed = velocidad;
         GreenfootImage carro_rival = getImage();
         carro_rival.scale(70, 150);

@@ -1,8 +1,8 @@
 #BlueJ class context
-comment0.target=Carro_rival
+comment0.target=Rival
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ carro_rival\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=velocidad
-comment1.target=Carro_rival(int)
+comment1.target=Rival(int)
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ carro_rival\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment2.params=
 comment2.target=void\ act()

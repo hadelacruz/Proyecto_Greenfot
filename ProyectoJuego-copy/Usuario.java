@@ -6,10 +6,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Carro_usuario extends Actor
+public class Usuario extends Actor
 {
     private int speed;
-    public Carro_usuario (int velocidad){
+    public Usuario (int velocidad){
         speed = velocidad;
         GreenfootImage carro_usuario = getImage();
         carro_usuario.scale(125, 300);
@@ -39,7 +39,7 @@ public class Carro_usuario extends Actor
         MyWorld mundo = (MyWorld) getWorld();
         //Se elimina el rival y el usuario si chocan
         Actor rival;
-        rival=  getOneObjectAtOffset(0,0, Carro_rival.class);
+        rival=  getOneObjectAtOffset(0,0, Rival.class);
         if(rival !=null){
             World Myworld;
             Myworld = getWorld();
