@@ -17,7 +17,7 @@ public class Carro_rival extends Actor
     public Carro_rival(int velocidad){
         speed = velocidad;
         GreenfootImage carro_rival = getImage();
-        carro_rival.scale(55, 150);
+        carro_rival.scale(70, 150);
     
     }
     

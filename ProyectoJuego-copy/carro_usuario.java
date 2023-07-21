@@ -12,7 +12,7 @@ public class Carro_usuario extends Actor
     public Carro_usuario (int velocidad){
         speed = velocidad;
         GreenfootImage carro_usuario = getImage();
-        carro_usuario.scale(98, 300);
+        carro_usuario.scale(125, 300);
     }
     /**
      * Act - do whatever the carro_usuario wants to do. This method is called whenever
@@ -36,6 +36,7 @@ public class Carro_usuario extends Actor
             if(getY() < 615)
                 setLocation(getX() , getY () +speed);
         }
+        MyWorld mundo = (MyWorld) getWorld();
         //Se elimina el rival y el usuario si chocan
         Actor rival;
         rival=  getOneObjectAtOffset(0,0, Carro_rival.class);
@@ -44,7 +45,8 @@ public class Carro_usuario extends Actor
             Myworld = getWorld();
             Myworld.removeObject(rival);
             Myworld.removeObject(this);
-            
+            mundo.stop_audio();
+            Greenfoot.playSound("../sounds/choque2.mp3");
             Greenfoot.setWorld(new MyWorld());
             Greenfoot.stop();
         }

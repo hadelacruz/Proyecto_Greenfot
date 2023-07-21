@@ -12,11 +12,16 @@ public class MyWorld extends World
     private Counter score;
     private Counter level;
     
+    
     private int velocidad_enemigo;
     private int cantidad_adelantamientos;
     private int cantidad_adelantamientos_nivel;
     private int cantidad_rivales;
     private Carro_usuario carro;
+    
+    
+    //Sonido mundo
+    GreenfootSound backgroundMusic = new GreenfootSound("../sounds/audio_coche.mp3");
     
     
 
@@ -31,7 +36,7 @@ public class MyWorld extends World
         prepare();
         carro = new Carro_usuario(3);
         //Lugar donde colocamos al carro_usuario
-        addObject(carro, 275, 615);
+        addObject(carro, 275, 515);
         
         //Inicializar variables
         cantidad_adelantamientos = 0;
@@ -48,10 +53,16 @@ public class MyWorld extends World
         
         
         
+        
     }
     public void act(){
+        backgroundMusic.playLoop();
         aumentar_dificultad();
         agregar_rivales();
+    }
+    
+    public void stop_audio(){
+        backgroundMusic.stop();
     }
     
     /*public int getRandomNumber(int start, int end){
