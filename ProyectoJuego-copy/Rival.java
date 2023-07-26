@@ -23,6 +23,7 @@ public class Rival extends Actor
     
     public void act()
     {
+        
         // El carro rival desaparece si llega al limite del mundo
         setLocation(getX(), getY() + speed);
         if(getY() >= getWorld().getHeight() -1){
