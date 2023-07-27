@@ -10,7 +10,7 @@ public class Usuario extends Actor
 {
     World w;
     private int speed;
-    //private int cantidad_balas = 0;
+    private int cantidad_balas = 0;
     
     boolean isShot;
     public Usuario (int velocidad){
@@ -58,7 +58,7 @@ public class Usuario extends Actor
             //Greenfoot.stop();
         
         }
-        if(mundo.level.getValue() >5){
+        if(mundo.level.getValue() >=4){
             setShot();
 
         }
@@ -73,12 +73,12 @@ public class Usuario extends Actor
     public void setShot(){
         
         if(isShot && Greenfoot.isKeyDown("SPACE")){
-            //cantidad_balas++;
-            //if (cantidad_balas <5){
+            cantidad_balas++;
+            if (cantidad_balas <= 15){
                 Bala shot = new Bala();
                 getWorld().addObject(shot, getX(), getY());
                 isShot = false;
-            //}
+            }
             
         }
         if(!isShot && !Greenfoot.isKeyDown("SPACE")){
