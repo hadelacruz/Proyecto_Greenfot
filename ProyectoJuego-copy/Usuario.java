@@ -10,7 +10,11 @@ public class Usuario extends Actor
 {
     World w;
     private int speed;
+    //private int cantidad_balas = 0;
+    
+    boolean isShot;
     public Usuario (int velocidad){
+        isShot = false;
         speed = velocidad;
         GreenfootImage carro_usuario = getImage();
         carro_usuario.scale(125, 300);
@@ -21,7 +25,6 @@ public class Usuario extends Actor
      */
     public void act()
     { 
-        shooter();
         
         if (Greenfoot.isKeyDown("right")){
             if(getX() < 410)
@@ -53,9 +56,13 @@ public class Usuario extends Actor
             Greenfoot.setWorld(new Menu());
             //Greenfoot.setWorld(new MyWorld());
             //Greenfoot.stop();
-            
-            
+        
         }
+        if(mundo.level.getValue() >5){
+            setShot();
+
+        }
+        
         
     }
     
@@ -63,16 +70,25 @@ public class Usuario extends Actor
         speed++;
     }
     
-    public void shooter()
-{
-    World w = getWorld();
-    if (Greenfoot.isKeyDown("space"))
-    {
-        bala nuevabala = new bala(); // Asigna el objeto creado a una variable
-        nuevabala.setRotation(270); // Establece la rotación inicial hacia arriba (270 grados)
-        w.addObject(nuevabala, getX(), getY()); // Agrega la bala con la rotación especificada
+    public void setShot(){
+        
+        if(isShot && Greenfoot.isKeyDown("SPACE")){
+            //cantidad_balas++;
+            //if (cantidad_balas <5){
+                Bala shot = new Bala();
+                getWorld().addObject(shot, getX(), getY());
+                isShot = false;
+            //}
+            
+        }
+        if(!isShot && !Greenfoot.isKeyDown("SPACE")){
+            isShot = true;
+        }
     }
-}
+    
+    
+   
+
 
 
 

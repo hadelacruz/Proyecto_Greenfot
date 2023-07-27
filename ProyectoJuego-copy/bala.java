@@ -6,17 +6,44 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class bala extends Actor
+public class Bala extends Actor
 {
     /**
      * Act - do whatever the bala wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
+    int speedShot = 6;
+    MyWorld mundo = (MyWorld) getWorld();
+
+    
+    public Bala(){
+        GreenfootImage bala = getImage();
+        bala.scale(50, 50);
+    }
+    
     public void act()
     {
-        // Add your action code here.
-        GreenfootImage bala = getImage();
-        bala.scale(70, 60);
-        move(5);
+        
+        //Posición de la bala
+        setLocation(getX(), getY() -speedShot);
+        
+        
+        //Eliminar carro enemigo
+        Actor rival;
+        rival=  getOneObjectAtOffset(0,0, Rival.class);
+        if(rival !=null){
+            World Myworld;
+            Myworld = getWorld();
+            Myworld.removeObject(rival);
+            Myworld.removeObject(this);
+            
+            //Greenfoot.playSound("../sounds/choque2.mp3");
+        
+        }
+        
+        else if((getY() <= 20)){
+            getWorld().removeObject(this);
+        }
     }
 }

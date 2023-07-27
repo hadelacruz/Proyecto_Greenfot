@@ -10,7 +10,7 @@ public class MyWorld extends World
 {   
     //Variables para inicializar el mundo
     private Counter score;
-    private Counter level;
+    public Counter level;
     
     
     private int velocidad_enemigo;
@@ -90,7 +90,9 @@ public class MyWorld extends World
             level.add(1);
             carro.aumenta_velocidad();
         }
+        
     }
+    
     
     public void agregar_rivales(){
         if(cantidad_rivales ==0){

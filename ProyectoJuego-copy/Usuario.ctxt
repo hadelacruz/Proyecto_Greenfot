@@ -9,5 +9,5 @@ comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ carro_usuario\ wants\ to\ do.\ Th
 comment3.params=
 comment3.target=void\ aumenta_velocidad()
 comment4.params=
-comment4.target=void\ shooter()
+comment4.target=void\ setShot()
 numComments=5
