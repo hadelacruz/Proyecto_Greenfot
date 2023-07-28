@@ -6,17 +6,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Counter extends Actor
+public class Contador extends Actor
 {
     private int value = 0;
     private int target = 0;
     private String text;
     private int stringLength;
 
-    public Counter(){
+    public Contador(){
         this("");
     }
-    public Counter(String prefix)
+    public Contador(String prefix)
     {
         text = prefix;
         stringLength = (text.length() + 2) * 16;

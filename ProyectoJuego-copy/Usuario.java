@@ -58,7 +58,7 @@ public class Usuario extends Actor
             //Greenfoot.stop();
         
         }
-        if(mundo.level.getValue() >=4){
+        if(mundo.level.getValue() >3){
             setShot();
 
         }
@@ -75,6 +75,11 @@ public class Usuario extends Actor
         if(isShot && Greenfoot.isKeyDown("SPACE")){
             cantidad_balas++;
             if (cantidad_balas <= 15){
+                //Validar lo del contador de disparos
+                MyWorld mundo = (MyWorld) getWorld();
+                ContadorDisparos cont = mundo.getContadorDisparos();
+                cont.addContar();
+                
                 Bala shot = new Bala();
                 getWorld().addObject(shot, getX(), getY());
                 isShot = false;

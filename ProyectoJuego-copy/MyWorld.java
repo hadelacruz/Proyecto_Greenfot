@@ -9,9 +9,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {   
     //Variables para inicializar el mundo
-    private Counter score;
-    public Counter level;
-    
+    private Contador score;
+    public Contador level;
+    private ContadorDisparos cont;
     
     private int velocidad_enemigo;
     private int cantidad_adelantamientos;
@@ -44,12 +44,14 @@ public class MyWorld extends World
         velocidad_enemigo = 5;
         //cantidad_rivales = 0;
         
-        score = new Counter("Soccer: ");
-        level = new Counter("Level: ");
+        score = new Contador("Soccer: ");
+        level = new Contador("Level: ");
+        cont = new ContadorDisparos();
         level.add(1);
         
         addObject(level, 175, 30);
         addObject(score, 180, 50);
+        addObject(cont, 390, 40);
         
         
         
@@ -64,11 +66,6 @@ public class MyWorld extends World
     public void stop_audio(){
         backgroundMusic.stop();
     }
-    
-    /*public int getRandomNumber(int start, int end){
-        int normal = Greenfoot.getRandomNumber(end-start+1);
-        return normal+start;
-    }*/
     
     public void aumentar_puntuacion(int valor){
         score.add(valor);
@@ -124,6 +121,10 @@ public class MyWorld extends World
             
             cantidad_rivales = 2;
         }
+    }
+    
+    public ContadorDisparos getContadorDisparos(){
+        return cont;
     }
     
     
