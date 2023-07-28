@@ -37,7 +37,7 @@ public class Shot extends Actor
             Myworld = getWorld();
             Myworld.removeObject(rival);
             Myworld.removeObject(this);
-            Greenfoot.playSound("impacto.mp3");
+            Greenfoot.playSound("../sounds/shot.mp3");
         
         }
         
