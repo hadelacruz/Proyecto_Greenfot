@@ -80,7 +80,7 @@ public class Usuario extends Actor
                 ContadorDisparos cont = mundo.getContadorDisparos();
                 cont.addContar();
                 
-                Bala shot = new Bala();
+                Shot shot = new Shot();
                 getWorld().addObject(shot, getX(), getY());
                 isShot = false;
             }
