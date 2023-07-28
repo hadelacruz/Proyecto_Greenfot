@@ -45,7 +45,7 @@ public class Usuario extends Actor
         MyWorld mundo = (MyWorld) getWorld();
         //Se elimina el rival y el usuario si chocan
         Actor rival;
-        rival=  getOneObjectAtOffset(35,35, Rival.class);
+        rival =  getOneObjectAtOffset(0,0, Rival.class);
         if(rival !=null){
             World Myworld;
             Myworld = getWorld();
